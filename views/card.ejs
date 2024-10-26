@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhagawat Gita Shlok</title>
+    <link rel="stylesheet" href="/styles/card.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="/search/<%= data.ChapNum %>" method="post">
+        <input type="text" name="ShlokId" placeholder="Search Shlok By its Number">
+        <input type="submit" placeholder="Search">
+      </form>
+      <h1>Chapter-<%= data.ChapNum %></h1>
+      <h2>Shlok-<%= data.verseNum %></h2>
+      <div class="shlok"><%= data.shlok %></div>
+      <div class="translation"><%= data.translation %></div>
+      
+      <div class="btns">
+        <button class="pushable">
+          <a href="/chapter/<%= data.ChapNum %>/<%= data.verseNum - 1%>">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front"> Previous </span>
+          </a>
+        </button>
+        <button class="pushable">
+          <a href="/chapter/<%= data.ChapNum %>/<%= data.verseNum + 1%>">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front"> Next </span>
+          </a>
+        </button>
+      </div>
+      <button class="pushable">
+        <a href="/">
+          <span class="shadow"></span>
+          <span class="edge"></span>
+          <span class="front"> All Chapters </span>
+        </a>
+      </button>
+
+      
+    </div>
+  </body>
+</html>
