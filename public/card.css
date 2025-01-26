@@ -1,63 +1,10 @@
-/* Base Styles */
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f7f9fb;
-  color: #2c3e50;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-image: url('KRishna.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  backdrop-filter: blur(5px);
-}
-
-.container {
-  background-color: #ffffff;
-  padding: 30px 40px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 600px;
-  width: 100%;
-}
-
-/* Heading Styles */
-h1 {
-  font-size: 2.2rem;
-  color: #34495e;
-  margin-bottom: 15px;
-}
-
-h2 {
-  font-size: 1.8rem;
-  color: #16a085;
-  margin-bottom: 20px;
-}
-
-/* Shlok and Translation */
-.shlok {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 20px;
-}
-
-.translation {
-  font-size: 1.2rem;
-  color: #7f8c8d;
-  margin-bottom: 30px;
-}
-
 /* Button Container */
 .btns {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
-  gap: 10px;
+  flex-direction: column; /* Stack buttons vertically on mobile */
+  gap: 10px; /* Add spacing between buttons */
+  justify-content: center; /* Center-align buttons */
+  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -68,10 +15,8 @@ h2 {
   border: none;
   background: none;
   cursor: pointer;
-}
-
-.pushable a {
-  text-decoration: none;
+  width: 100%; /* Full width for better responsiveness */
+  max-width: 200px; /* Optional: Limit maximum button width */
 }
 
 .pushable .shadow {
@@ -98,17 +43,18 @@ h2 {
 
 .pushable .front {
   position: relative;
-  padding: 12px 30px;
+  padding: 12px 20px;
   background: #2980b9;
   border-radius: 12px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: white;
   font-weight: 600;
-  transition: transform 0.2s ease;
-  display: inline-block;
+  text-align: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
+/* Hover Effects */
 .pushable:hover .shadow {
   transform: translate(4px, 4px);
 }
@@ -123,89 +69,16 @@ h2 {
 
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
-  body {
-    padding: 10px;
+  .btns {
+    gap: 15px; /* Increase spacing for better touch targets */
   }
 
-  .container {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  .shlok, .translation {
-    font-size: 1rem;
+  .pushable {
+    width: 100%; /* Ensure buttons take up full width */
   }
 
   .pushable .front {
-    font-size: 1rem;
-    padding: 10px 20px;
+    font-size: 0.9rem; /* Slightly smaller text for mobile */
+    padding: 10px 15px; /* Adjust padding */
   }
-
-  .btns {
-    flex-direction: column; /* Stacks buttons vertically */
-    gap: 10px;
-  }
-}
-
-/* Tablet Responsiveness */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .container {
-    padding: 25px 35px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  .shlok, .translation {
-    font-size: 1.2rem;
-  }
-
-  .pushable .front {
-    font-size: 1.1rem;
-    padding: 11px 25px;
-  }
-
-  .btns {
-    gap: 15px;
-  }
-}
-
-/* Style for the search input */
-.container form input[type="text"] {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: 100%;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-/* Style for the search submit button */
-.container form input[type="submit"] {
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 100%;
-}
-
-/* Change the submit button color on hover */
-.container form input[type="submit"]:hover {
-  background-color: #0056b3;
 }
