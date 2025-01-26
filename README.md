@@ -35,7 +35,7 @@ Before you start, ensure you have the following installed:
    cd your-repository
 
 2. **Install Dependenices**:
-
+   ```bash
    npm install
 
 3. **Set Up Environment Variables:**
@@ -72,8 +72,8 @@ Submit a pull request for improvements or fixes.
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ### 👏 Acknowledgements
-**Bhagavad-Gita API: For providing the chapter and verse data.**
-**Node.js: For the backend runtime.**
-**Express: For handling routing and server-side logic.**
-**EJS: For rendering dynamic content.**
-**Vercel: For easy deployment.**
+1. **Bhagavad-Gita API: For providing the chapter and verse data.**
+2. **Node.js: For the backend runtime.**
+3. **Express: For handling routing and server-side logic.**
+4. **EJS: For rendering dynamic content.**
+5. **Vercel: For easy deployment.**
