@@ -1,144 +1,164 @@
 /* Base Styles */
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f7f9fb;
-  color: #2c3e50;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(
+    to bottom right,
+    #8ec5fc,
+    #e0c3fc
+  ); /* Attractive gradient background */
+  color: #2c3e50;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url('KRishna.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  backdrop-filter: blur(5px);
+  padding: 20px;
 }
 
+/* Container */
 .container {
-  background-color: #ffffff;
-  padding: 30px 40px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  width: 100%;
   text-align: center;
-  max-width: 600px;
-  width: 90%;
 }
 
-/* Heading Styles */
-h1 {
+/* Search Bar */
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.search-bar input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  flex: 1;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background: #16a085;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+  background: #13856e;
+}
+
+/* Content */
+.content h1 {
   font-size: 2rem;
   color: #34495e;
   margin-bottom: 10px;
 }
 
-h2 {
+.content h2 {
   font-size: 1.5rem;
   color: #16a085;
   margin-bottom: 20px;
 }
 
-/* Shlok and Translation */
-.shlok {
+.content .shlok {
   font-size: 1.3rem;
   font-weight: 600;
   color: #2c3e50;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-.translation {
+.content .translation {
   font-size: 1rem;
   color: #7f8c8d;
   margin-bottom: 30px;
 }
 
-/* Button Container */
-.btns {
+/* Button Group */
+.button-group {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; /* Ensures buttons wrap on small screens */
-  gap: 15px;
+  justify-content: space-between;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
-.pushable {
-  position: relative;
-  padding: 0;
-  border: none;
-  text-decoration: none;
-  background: none;
-  display: inline-block;
-  width: 100%; /* Full width for responsiveness */
-  max-width: 200px; /* Maximum width for buttons */
-}
-
-.pushable .shadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  transition: transform 0.2s ease;
-}
-
-.pushable .edge {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #ecf0f1;
-  border-radius: 12px;
-  transition: transform 0.2s ease;
-}
-
-.pushable .front {
-  position: relative;
-  padding: 10px 15px;
-  background: #2980b9;
-  border-radius: 12px;
-  font-size: 1rem;
-  color: white;
-  font-weight: 600;
+.button-group .button {
+  flex: 1;
   text-align: center;
-  transition: transform 0.2s ease;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 15px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.button-group .button:hover {
+  background: #217dbb;
+}
+
+/* All Chapters Button */
+.all-chapters {
   display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #e74c3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
-/* Hover Effects */
-.pushable:hover .shadow {
-  transform: translate(4px, 4px);
-}
-
-.pushable:hover .edge {
-  transform: translate(4px, 4px);
-}
-
-.pushable:hover .front {
-  transform: translate(-4px, -4px);
+.all-chapters:hover {
+  background: #c0392b;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
-  .btns {
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px; /* Add spacing between buttons */
+  .content h1 {
+    font-size: 1.8rem;
   }
 
-  .pushable {
-    width: 100%; /* Full width on smaller devices */
-    max-width: none; /* Remove max-width constraint */
+  .content h2 {
+    font-size: 1.3rem;
   }
 
-  .pushable .front {
-    font-size: 0.9rem; /* Slightly smaller font size */
-    padding: 10px; /* Adjust padding */
+  .content .shlok {
+    font-size: 1.1rem;
   }
-}
 
-.all-chapters {
-  margin-top: 10px; /* Add some space above the "All Chapters" button */
+  .content .translation {
+    font-size: 0.9rem;
+  }
+
+  .button-group .button {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  .all-chapters {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
 }
