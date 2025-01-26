@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
   background-image: url('KRishna.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   backdrop-filter: blur(5px);
 }
 
@@ -56,6 +56,8 @@ h2 {
 .btns {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+  gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -121,6 +123,10 @@ h2 {
 
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
   .container {
     padding: 20px;
   }
@@ -143,17 +149,8 @@ h2 {
   }
 
   .btns {
-    flex-direction: column;
+    flex-direction: column; /* Stacks buttons vertically */
     gap: 10px;
-  }
-
-  .container form input[type="text"] {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .container form input[type="submit"] {
-    width: 100%;
   }
 }
 
@@ -183,14 +180,6 @@ h2 {
   .btns {
     gap: 15px;
   }
-
-  .container form input[type="text"] {
-    width: 80%;
-  }
-
-  .container form input[type="submit"] {
-    width: auto;
-  }
 }
 
 /* Style for the search input */
@@ -198,9 +187,9 @@ h2 {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  width: 300px;
+  width: 100%;
   font-size: 16px;
-  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 /* Style for the search submit button */
@@ -213,6 +202,7 @@ h2 {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 100%;
 }
 
 /* Change the submit button color on hover */
