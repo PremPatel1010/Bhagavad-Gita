@@ -50,6 +50,26 @@ app.get("/chapter/:chapterid", async (req, res) => {
   }
 });
 
+app.get("/chapter/:chapterid/:verseId", async (req, res) => {
+  try {
+    const { chapterid, verseId } = req.params;
+    const RawResponse = await axios.get(
+      `https://bhagavad-gita3.p.rapidapi.com/v2/chapters/${chapterid}/verses/${verseId}/`,
+      config
+    );
+    const response = RawResponse.data;
+    const data = {
+      verseNum: response.verse_number,
+      ChapNum: response.chapter_number,
+      shlok: response.text,
+      translation: response.translations[0].description,
+    };
+    res.render("card.ejs", { data });
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 app.post("/search/:id", async (req, res) => {
   try {
     const shlokId = req.body["ShlokId"];
