@@ -11,18 +11,57 @@
     />
   </head>
   <body>
-    <div class="container">
-      <div class="search-bar">
-        <form action="/search/<%= data.ChapNum %>" method="post">
+    <div
+      class="container"
+      style="
+        background: #ffffff;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+      "
+    >
+      <!-- Search Bar -->
+      <div
+        class="search-bar"
+        style="margin-bottom: 20px; display: flex; gap: 10px; justify-content: center;"
+      >
+        <form action="/search/<%= data.ChapNum %>" method="post" style="display: flex; width: 100%;">
           <input
             type="text"
             name="ShlokId"
             placeholder="Search Shlok By Number"
+            style="
+              padding: 10px;
+              flex: 1;
+              border: 1px solid #ccc;
+              border-radius: 10px;
+              font-size: 16px;
+            "
           />
-          <button type="submit">Search</button>
+          <button
+            type="submit"
+            style="
+              padding: 10px 20px;
+              background: #16a085;
+              color: white;
+              border: none;
+              border-radius: 10px;
+              cursor: pointer;
+              font-size: 16px;
+              transition: background 0.3s ease;
+            "
+            onmouseover="this.style.backgroundColor='#13856e'"
+            onmouseout="this.style.backgroundColor='#16a085'"
+          >
+            Search
+          </button>
         </form>
       </div>
 
+      <!-- Content -->
       <div class="content">
         <h1>Chapter <span><%= data.ChapNum %></span></h1>
         <h2>Shlok <span><%= data.verseNum %></span></h2>
@@ -30,7 +69,16 @@
         <div class="translation"><%= data.translation %></div>
       </div>
 
-      <div class="button-group">
+      <!-- Button Group -->
+      <div
+        class="button-group"
+        style="
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+          margin-bottom: 20px;
+        "
+      >
         <!-- Previous Button -->
         <a
           href="/chapter/<%= data.ChapNum %>/<%= data.verseNum - 1 %>"
