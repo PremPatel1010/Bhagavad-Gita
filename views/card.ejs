@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bhagavad Gita Shlok</title>
     <link rel="stylesheet" type="text/css" href="/card.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
@@ -32,18 +31,69 @@
       </div>
 
       <div class="button-group">
+        <!-- Previous Button -->
         <a
           href="/chapter/<%= data.ChapNum %>/<%= data.verseNum - 1 %>"
-          class="button"
-          >Previous</a
+          style="
+            display: inline-block;
+            text-align: center;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+          "
+          onmouseover="this.style.backgroundColor='#217dbb'"
+          onmouseout="this.style.backgroundColor='#3498db'"
         >
+          Previous
+        </a>
+
+        <!-- Next Button -->
         <a
           href="/chapter/<%= data.ChapNum %>/<%= data.verseNum + 1 %>"
-          class="button"
-          >Next</a
+          style="
+            display: inline-block;
+            text-align: center;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+          "
+          onmouseover="this.style.backgroundColor='#217dbb'"
+          onmouseout="this.style.backgroundColor='#3498db'"
         >
+          Next
+        </a>
       </div>
-      <a href="/" class="all-chapters">All Chapters</a>
+
+      <!-- All Chapters Button -->
+      <a
+        href="/"
+        style="
+          display: inline-block;
+          margin-top: 10px;
+          padding: 10px 15px;
+          background-color: #e74c3c;
+          color: white;
+          text-decoration: none;
+          border-radius: 10px;
+          font-size: 1rem;
+          font-weight: 600;
+          transition: background-color 0.3s ease;
+        "
+        onmouseover="this.style.backgroundColor='#c0392b'"
+        onmouseout="this.style.backgroundColor='#e74c3c'"
+      >
+        All Chapters
+      </a>
     </div>
   </body>
 </html>
