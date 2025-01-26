@@ -9,39 +9,31 @@
   <body>
     <div class="container">
       <form action="/search/<%= data.ChapNum %>" method="post">
-        <input type="text" name="ShlokId" placeholder="Search Shlok By its Number">
-        <input type="submit" placeholder="Search">
+        <input type="text" name="ShlokId" placeholder="Search Shlok By its Number" />
+        <input type="submit" value="Search" />
       </form>
       <h1>Chapter-<%= data.ChapNum %></h1>
       <h2>Shlok-<%= data.verseNum %></h2>
       <div class="shlok"><%= data.shlok %></div>
       <div class="translation"><%= data.translation %></div>
-      
+
       <div class="btns">
-        <button class="pushable">
-          <a href="/chapter/<%= data.ChapNum %>/<%= data.verseNum - 1%>">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front"> Previous </span>
-          </a>
-        </button>
-        <button class="pushable">
-          <a href="/chapter/<%= data.ChapNum %>/<%= data.verseNum + 1%>">
-            <span class="shadow"></span>
-            <span class="edge"></span>
-            <span class="front"> Next </span>
-          </a>
-        </button>
-      </div>
-      <button class="pushable">
-        <a href="/">
+        <a href="/chapter/<%= data.ChapNum %>/<%= data.verseNum - 1%>" class="pushable">
           <span class="shadow"></span>
           <span class="edge"></span>
-          <span class="front"> All Chapters </span>
+          <span class="front">Previous</span>
         </a>
-      </button>
-
-      
+        <a href="/chapter/<%= data.ChapNum %>/<%= data.verseNum + 1%>" class="pushable">
+          <span class="shadow"></span>
+          <span class="edge"></span>
+          <span class="front">Next</span>
+        </a>
+      </div>
+      <a href="/" class="pushable all-chapters">
+        <span class="shadow"></span>
+        <span class="edge"></span>
+        <span class="front">All Chapters</span>
+      </a>
     </div>
   </body>
 </html>
